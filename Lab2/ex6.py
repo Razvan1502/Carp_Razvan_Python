@@ -1,3 +1,4 @@
+
 def function6( count, *lists,):
 
     all_lists = []
