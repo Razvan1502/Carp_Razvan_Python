@@ -39,7 +39,7 @@ matrix = [
     ['h', 't', 'y', 'p']
 ]
 
-#spiral_traversal(matrix)
+spiral_traversal(matrix)
 
 #ex6
 def is_palindrome(number):
@@ -65,7 +65,7 @@ def extract_first_number(text):
 
 
 text1 = "An apple is 123 USD"
-#print(extract_first_number(text1))
+print(extract_first_number(text1))
 
 #ex8
 def count_ones_bits(number):
@@ -111,4 +111,4 @@ def nr_words(text):
             count += 1
     return count
 
-print(nr_words("I have Python exam"))
+#print(nr_words("I have Python exam"))
