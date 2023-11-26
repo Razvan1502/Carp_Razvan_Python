@@ -2,10 +2,11 @@ def count_characters(text):
     count = {}
 
     for char in text:
-        if char in count:
-            count[char] += 1
-        else:
-            count[char] = 1
+        count[char] = count.get(char, 0) + 1
+        # if char in count:
+        #     count[char] += 1
+        # else:
+        #     count[char] = 1
 
     return count
 

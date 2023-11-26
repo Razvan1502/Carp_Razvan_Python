@@ -7,33 +7,35 @@ class Stack:
 
     def pop(self):
         if not self.is_empty():
-            return self.stack.pop()
-        return None
+            item = self.stack[-1]
+            self.stack = self.stack[:-1]
+            return item
+        else:
+            return None
 
     def peek(self):
         if not self.is_empty():
             return self.stack[-1]
-        return None
+        else:
+            return None
 
     def is_empty(self):
         return len(self.stack) == 0
 
-    def size(self):
-        return len(self.stack)
+def main():
+ stack = Stack()
 
-# Example usage:
-stack = Stack()
+ stack.push(5)
+ stack.push(10)
+ stack.push(15)
 
-stack.push(5)
-stack.push(10)
-stack.push(15)
+ print(stack.peek())
+ print(stack.pop())
+ print(stack.peek())
 
-print("Stack size:", stack.size())
+ print(stack.pop())
+ print(stack.pop())
+ print(stack.pop())
 
-print("Popped:", stack.pop())
-print("Peek:", stack.peek())
-
-print("Popped:", stack.pop())
-print("Popped:", stack.pop())
-
-print("Peek:", stack.peek())
+if __name__ == "__main__":
+    main()
