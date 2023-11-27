@@ -1,0 +1,10 @@
+{
+    "column1": {
+        "check_missing": true,
+        "expected_dtype": "int64"
+    },
+    "column2": {
+        "check_missing": false,
+        "expected_dtype": "float64"
+    }
+}
