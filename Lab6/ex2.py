@@ -7,10 +7,10 @@ def rename_files_with_prefix(directory):
         if not os.path.isdir(directory):
             raise ValueError(f"Error: {directory} is not a valid directory path.")
 
-        # Get list of files in the directory
+
         files = os.listdir(directory)
 
-        # Rename files with sequential number prefixes
+
         for index, filename in enumerate(files, start=1):
             old_path = os.path.join(directory, filename)
             new_filename = f"file{index}{os.path.splitext(filename)[1]}"

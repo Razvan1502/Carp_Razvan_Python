@@ -9,17 +9,17 @@ def count_files_by_extension(directory):
 
         files = os.listdir(directory)
 
-        # Check if directory is empty
+
         if not files:
             raise ValueError(f"Error: {directory} is an empty directory.")
 
-        # dictionary to store counts for each file extension
+
         extension_counts = {}
 
-        #count files by extension
+
         for filename in files:
             _, file_extension = os.path.splitext(filename)
-            file_extension = file_extension.lower()  # Convert to lowercase for case-insensitivity
+            file_extension = file_extension.lower()
 
 
             extension_counts[file_extension] = extension_counts.get(file_extension, 0) + 1

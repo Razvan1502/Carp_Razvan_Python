@@ -1,6 +1,7 @@
 import os
 import sys
 
+
 def calculate_total_size(directory):
     try:
 
@@ -9,13 +10,13 @@ def calculate_total_size(directory):
 
         total_size = 0
 
-        # Iterate through files in the directory and its subdirectories
+
         for dirpath, _, filenames in os.walk(directory):
             for filename in filenames:
                 file_path = os.path.join(dirpath, filename)
 
                 try:
-                    # Get the size of each file and add to the total
+
                     total_size += os.path.getsize(file_path)
 
                 except Exception as e:
@@ -25,6 +26,7 @@ def calculate_total_size(directory):
 
     except Exception as e:
         print(f"Error: {e}")
+
 
 if __name__ == "__main__":
 
