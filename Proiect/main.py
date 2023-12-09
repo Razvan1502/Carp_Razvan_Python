@@ -58,18 +58,34 @@ def calculate_correlation(data1, data2):
     correlation = covariance / (std_dev_data1 * std_dev_data2)
     return correlation
 
-def main():
-    data1 = [1, 2, 3, 4, 5,]
-    data2 = [2, 3, 4, 5, 6]
+def main(file_path, column_name):
+    data = pd.read_csv(file_path)
 
-    print("Mean: ", calculate_mean(data1))
-    print("Median: ", calculate_median(data1))
-    print("Standard deviation: ", calculate_standard_deviation(data1))
-    print("Min and max: ", calculate_min_max(data1))
-    print("Quartiles: ", calculate_quartiles(data1))
-    print("Covariance: ", calculate_covariance(data1, data2))
-    print("Correlation: ", calculate_correlation(data1, data2))
+    if column_name not in data.columns:
+        print(f"Coloana '{column_name}' nu exista in fisierul CSV.")
+        return
+
+    column_data = data[column_name]
+
+    print(f"Media: {calculate_mean(column_data)}")
+    print(f"Mediana: {calculate_median(column_data)}")
+    print(f"Deviatia standard: {calculate_standard_deviation(column_data)}")
+    print(f"Minim, Maxim: {calculate_min_max(column_data)}")
+    print("Cvartile: ",calculate_quartiles(column_data))
+    print(f"Covarianta dintre varsta si IQ: {calculate_covariance(data['varsta'], data['IQ'])}")
+    print(f"Coeficientul de corelatie dintre varsta si IQ: {calculate_correlation(data['varsta'], data['IQ'])}")
+
+
+    plt.scatter(data['varsta'], data['IQ'])
+    plt.title(f"Relatia dintre varsta si IQ")
+    plt.xlabel("Varsta")
+    plt.ylabel("IQ")
+    plt.show()
+
+
+file_path = r"C:\Users\Razvan\Carp_Razvan_Python\Proiect\file.csv"
+selected_column = "varsta"
 
 
 if __name__ == "__main__":
-    main()
+    main(file_path, selected_column)
